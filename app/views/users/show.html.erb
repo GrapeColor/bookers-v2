@@ -1,21 +1,11 @@
-<p id="notice"><%= notice %></p>
 <div class="row">
   <div class="col-xs-3">
-    <h2>User info</h2>
-    <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg" %>
-    <table class="table">
-      <tbody>
-        <tr></tr>
-        <tr>
-          <th>name</th>
-          <td><%= @user.name %></td>
-        </tr>
-        <tr>
-          <th>introduction</th>
-          <td><%= @user.introduction %></td>
-        </tr>
-      </tbody>
-    </table>
+    <%# User info %>
+    <%= render 'users/user', user: @user, book_new: @book_new %>
   </div>
-  <div class="col-xs-9"></div>
+
+  <div class="col-xs-9">
+    <%# Books %>
+    <%= render 'users/books', books: @books %>
+  </div>
 </div>
